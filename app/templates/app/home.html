@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container">
+                <br>
+                <br>
+                {% for route in routes %}
+                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                        <div class="card-header">{{route.name}} - {{route.route_type}}</div>
+                        <div class="card-body">
+                            {% for stop in route.stops.all %}
+                                <h4>{{stop.location}}</h4>
+                                <p style="font-size: 10px; margin-top: -5px;">{{stop.lat}},{{stop.lon}}</p>
+                                {% for key, value in distances.items %}
+                                    {% if key == stop.location %}
+                                        <strong>{{ value|floatformat:2 }} km <small>from your current location</small></strong><br>
+                                    {% endif %}
+                                {% endfor %}
+                                <hr style="height: 1px; background-color: aquamarine;">
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="container">
+                <br>
+                <p id="coords-p"></p>
+                <form action="/platforms/{{platform.id}}" method="POST">
+                    {% csrf_token %} 
+                    <input type="hidden" class="form-control"  id="coords-input-lat" name="user_coords_lat" step="any">
+                    <input type="hidden" class="form-control"  id="coords-input-lon" name="user_coords_lon" step="any">
+                    <button class="btn btn-primary">My Location</button>
+                </form>
+                <br>
+                {{map | safe}}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <br>
+    <div class="container" style="width: 80%;">
+        <ul class="list-group">
+            {% for platform in platforms %}
+                <li class="list-group-item"><a href="/platforms/{{ platform.id }}">{{ platform.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
