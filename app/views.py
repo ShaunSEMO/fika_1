@@ -4,7 +4,6 @@ from platforms import models
 import folium
 import math
 
-
 @login_required
 def platforms(request):
     platforms = models.Platform.objects.all()
@@ -91,3 +90,6 @@ def routes(request, id):
         m = m._repr_html_()
 
         return render(request, 'app/home.html', {'map':m, 'stops':stops, 'routes':routes, 'platform':platform})
+        
+def redir(request):
+    return redirect('/platforms')
