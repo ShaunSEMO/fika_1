@@ -26,12 +26,13 @@ SECRET_KEY = '+=!hd4^lxihh4-+3k#*t@en51@y&4*h_l#n)(053jl&$=+mi_d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.43.195', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -72,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'fika_1.wsgi.application'
+ASGI_APPLICATION = 'fika_1.routing.application'
 
 
 # Database
@@ -106,6 +108,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+CHANNEL_LAYERS ={
+    "default": {
+        "BACKEND":"channels.layers.InMemoryChannelLayer"
+    }
+}
 
 
 # Internationalization
