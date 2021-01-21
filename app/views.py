@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from platforms import models
+from . import haversine
 import folium
 import math
+from asgiref.sync import sync_to_async
+from django.shortcuts import get_object_or_404
 
 @login_required
 def platforms(request):
@@ -10,30 +13,24 @@ def platforms(request):
     return render(request, 'app/platforms.html', {'platforms': platforms})
 
 @login_required
-def routes(request, id):
-    platform = models.Platform.objects.get(id=id)
-    routes = models.Route.objects.filter(platform_id=id)
+def show_routes(request, name):
+    platform = get_object_or_404(models.Platform, name=name)
+    routes = models.Route.objects.filter(platform_id=platform.id)
+    m = folium.Map(location=[-26.195246, 28.034088], zoom_start=13)
+    m = m._repr_html_()
+    return render(request, 'app/routes.html', {'routes':routes, 'map': m, 'platform': platform})
 
-    def haversine(coord1, coord2):
-        R = 6372800  # Earth radius in meters
-        lat1, lon1 = coord1
-        lat2, lon2 = coord2
-        
-        phi1, phi2 = math.radians(lat1), math.radians(lat2) 
-        dphi       = math.radians(lat2 - lat1)
-        dlambda    = math.radians(lon2 - lon1)
-        
-        a = math.sin(dphi/2)**2 + \
-            math.cos(phi1)*math.cos(phi2)*math.sin(dlambda/2)**2
-        
-        return 2*R*math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+@login_required
+def routes(request, name, id):
+    platform = get_object_or_404(models.Platform, name=name)
+    route = models.Route.objects.get(id=id)
 
     stops = []
     stops_dict = {}
     
-    for route in routes:
-        for stop in models.Stop.objects.filter(route_id=route.id):
-            stops.append(stop)
+    for stop in models.Stop.objects.filter(route_id=route.id):
+        stops.append(stop)
 
     for stop in stops:
         stops_dict[stop.location] = (float(stop.lat), float(stop.lon))
@@ -51,7 +48,7 @@ def routes(request, id):
         distances = {}
 
         for loc, coord in stops_dict.items():
-            distance = haversine(user_coords,coord)
+            distance = haversine.haversine(user_coords,coord)
             distances[loc] = distance
 
         for loc, distance in distances.items():
@@ -64,32 +61,30 @@ def routes(request, id):
                     tooltip=tooltip,
                     icon=folium.Icon(color='blue')).add_to(m),
 
-        for route in routes:
-            stops = models.Stop.objects.filter(route_id=route.id)
-            for stop in stops:
-                folium.Marker([stop.lat, stop.lon],
-                            popup=f'<strong>{stop.location} - Bus Stop</strong>',
-                            tooltip=tooltip,
-                            icon=folium.Icon(color='red')).add_to(m),
+        stops = models.Stop.objects.filter(route_id=route.id)
+        for stop in stops:
+            folium.Marker([stop.lat, stop.lon],
+                        popup=f'<strong>{stop.location} - Bus Stop</strong>',
+                        tooltip=tooltip,
+                        icon=folium.Icon(color='red')).add_to(m),
 
         m = m._repr_html_()
-        return render(request, 'app/home.html', {'map':m, 'routes':routes, 'platform':platform, 'stops': stops, 'distances': distances})
+        return render(request, 'app/home.html', {'map':m, 'route':route, 'platform':platform, 'stops': stops, 'distances': distances})
     else:
         m = folium.Map(location=[-26.195246, 28.034088], zoom_start=13)
         
         tooltip = 'Click for more info'
 
-        for route in routes:
-            stops = models.Stop.objects.filter(route_id=route.id)
-            for stop in stops:
-                folium.Marker([stop.lat, stop.lon],
-                            popup=f'<strong>{stop.location} - Bus Stop</strong>',
-                            tooltip=tooltip,
-                            icon=folium.Icon(color='red')).add_to(m),
+        stops = models.Stop.objects.filter(route_id=route.id)
+        for stop in stops:
+            folium.Marker([stop.lat, stop.lon],
+                        popup=f'<strong>{stop.location} - Bus Stop</strong>',
+                        tooltip=tooltip,
+                        icon=folium.Icon(color='red')).add_to(m),
 
         m = m._repr_html_()
 
-        return render(request, 'app/home.html', {'map':m, 'stops':stops, 'routes':routes, 'platform':platform})
+        return render(request, 'app/home.html', {'map':m, 'stops':stops, 'route':route, 'platform':platform})
         
 def redir(request):
     return redirect('/platforms')
