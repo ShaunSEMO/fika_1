@@ -6,7 +6,6 @@
             <div class="container">
                 <br>
                 <br>
-                {% for route in routes %}
                     <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                         <div class="card-header">{{route.name}} - {{route.route_type}}</div>
                         <div class="card-body">
@@ -22,21 +21,26 @@
                             {% endfor %}
                         </div>
                     </div>
-                {% endfor %}
             </div>
         </div>
         <div class="col-md-8">
             <div class="container">
                 <br>
                 <p id="coords-p"></p>
-                <form action="/platforms/{{platform.id}}" method="POST">
+                <form action="/platforms/{{platform.name}}/routes/{{route.id}}" method="POST">
                     {% csrf_token %} 
                     <input type="hidden" class="form-control"  id="coords-input-lat" name="user_coords_lat" step="any">
                     <input type="hidden" class="form-control"  id="coords-input-lon" name="user_coords_lon" step="any">
                     <button class="btn btn-primary">My Location</button>
                 </form>
                 <br>
-                {{map | safe}}
+                <!-- {{map | safe}} -->
+                <br>
+                <hr>
+                <br>
+                <div id="mapid">
+
+                </div>
             </div>
         </div>
     </div>
