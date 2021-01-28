@@ -54,7 +54,7 @@
     <!-- Optional JavaScript -->
     <script>
       $( document ).ready(function() {
-        let socket = new WebSocket('ws://10.63.23.236:15928/ws/trackBus')
+        let socket = new WebSocket('wss://fika-1.herokuapp.com/ws/trackBus')
 
         socket.onopen = (e) => {
           alert('connection established')
