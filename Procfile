@@ -1,0 +1,1 @@
+web: gunicorn fika_1.wsgi
