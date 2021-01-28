@@ -81,14 +81,22 @@ ASGI_APPLICATION = 'fika_1.routing.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'fika_project',
-        'USER': 'tshego',
-        'HOST': '127.0.0.1',
-        'PASSWORD': 'root',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': 'fika_project',
+#         'USER': 'tshego',
+#         'HOST': '127.0.0.1',
+#         'PASSWORD': 'root',
+#         'PORT': '5432',
+#     }
+# }
 
 # DATABASES = {
 #     'default': {
