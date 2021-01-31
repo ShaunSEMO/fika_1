@@ -10,7 +10,7 @@ Dependencies:
 3. ionic lab: npm i -D -E @ionic/lab
 
 NB:
-I'm sorry If I missed any dependencies. 
-Please also keep the map bug in mind
-Please note that I have not implemented routing, change line 24 of the [app componenent ts](ionicFikaFrontend/src/app/app.component.ts)to view desired page. It's currently set to the trip details page. 
+* I'm sorry If I missed any dependencies. 
+* Please also keep the map bug in mind
+* Please note that I have not implemented routing, change line 24 of the [app.componenent.ts](ionicFikaFrontend/src/app/app.component.ts) to view desired page. It's currently set to the trip details page. 
 
