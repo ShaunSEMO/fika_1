@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'choose-route',
     loadChildren: () => import('./pages/choose-route/choose-route.module').then( m => m.ChooseRoutePageModule)
   },
+  {
+    path: 'trip-dets',
+    loadChildren: () => import('./pages/trip-dets/trip-dets.module').then( m => m.TripDetsPageModule)
+  },
 ];
 
 @NgModule({
