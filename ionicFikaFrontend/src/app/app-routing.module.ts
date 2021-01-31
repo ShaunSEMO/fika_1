@@ -18,6 +18,18 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
   },
+  {
+    path: 'choose-platform',
+    loadChildren: () => import('./pages/choose-platform/choose-platform.module').then( m => m.ChoosePlatformPageModule)
+  },
+  {
+    path: 'choose-start-dest',
+    loadChildren: () => import('./pages/choose-start-dest/choose-start-dest.module').then( m => m.ChooseStartDestPageModule)
+  },
+  {
+    path: 'choose-route',
+    loadChildren: () => import('./pages/choose-route/choose-route.module').then( m => m.ChooseRoutePageModule)
+  },
 ];
 
 @NgModule({
