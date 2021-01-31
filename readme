@@ -1,0 +1,13 @@
+Install node.js
+Install ionic cli: npm install -g @ionic/cli
+Navigate to ionic project directory or open project in VSCode and start terminal
+Install dependencies, see list below.
+Run the project in a browser: ionic serve --lab
+
+Dependencies:
+leaflet: npm i leaflet --save
+leaflet types: npm i @types/leaflet -D
+ionic lab: npm i -D -E @ionic/lab
+
+//I'm sorry If I missed any dependencies. Please also keep the map bug in mind.
+
