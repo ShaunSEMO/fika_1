@@ -88,3 +88,5 @@ def routes(request, name, id):
         
 def redir(request):
     return redirect('/platforms')
+
+# 

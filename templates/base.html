@@ -54,7 +54,7 @@
     <!-- Optional JavaScript -->
     <script>
       $( document ).ready(function() {
-        let socket = new WebSocket('ws://localhost:8000/ws/trackBus')
+        let socket = new WebSocket('ws://192.168.43.195:8000/ws/trackBus')
 
         socket.onopen = (e) => {
           alert('connection established')
