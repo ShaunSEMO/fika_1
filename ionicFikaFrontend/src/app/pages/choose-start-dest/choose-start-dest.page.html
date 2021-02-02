@@ -19,7 +19,7 @@
   <div class="choose">
     
     <ion-item lines="none">
-      <ion-select placeholder="Choose start station">
+      <ion-select [(ngModel)]="trip.start" placeholder="Choose start station">
         <ion-select-option value="AMIC">Amic Deck</ion-select-option>
         <ion-select-option value="EOH">EOH</ion-select-option>
         <ion-select-option value="KNK">Knockando</ion-select-option>
@@ -32,7 +32,7 @@
     </ion-item>
 
     <ion-item lines="none">
-      <ion-select placeholder="Choose end station">
+      <ion-select [(ngModel)]="trip.end" placeholder="Choose end station" aria-required="required">
         <ion-select-option value="AMIC">Amic Deck</ion-select-option>
         <ion-select-option value="EOH">EOH</ion-select-option>
         <ion-select-option value="KNK">Knockando</ion-select-option>
@@ -44,7 +44,7 @@
       </ion-select>
     </ion-item>
 
-    <ion-button expand="block" (click)="goAction()">GO</ion-button>
+    <ion-button expand="block" (click)="goAction()" [disabled]="trip.start ==='' || trip.end===''">GO</ion-button>
 
   </div>
 
