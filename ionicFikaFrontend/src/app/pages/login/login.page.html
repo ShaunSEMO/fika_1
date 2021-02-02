@@ -1,0 +1,63 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div  class="header">
+    <div class="header-content">
+      
+    </div>
+ </div>
+
+  <div class = "input">
+    <form>
+        
+        <ion-item lines="none">
+          <ion-label position="stacked">Email Address</ion-label>
+          <ion-input name="emailAdress" [(ngModel)]="data.emailAdress"></ion-input>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="data.password"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-text>
+            <h4>Forgot Password?</h4>
+          </ion-text>
+          
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-button expand="block" (click)="mainAction()">LOGIN</ion-button>
+        </ion-item>
+        <ion-item lines="none"> 
+          <ion-text>
+            <h3>Or login using social media</h3>
+          </ion-text>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-icon name="logo-facebook" style="zoom:2.0;"></ion-icon>
+              </ion-col>
+              <ion-col>
+                <ion-icon name="mail-outline" style="zoom:2.0;"></ion-icon>
+              </ion-col>
+              <ion-col>
+                <ion-icon name="logo-twitter" style="zoom:2.0;"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+    </form>
+
+  </div>
+
+  <div class="actions">
+    <ion-text>
+      <h1 (click)=signupAction()>SIGN UP</h1>
+    </ion-text>
+  </div>
+
+</ion-content>

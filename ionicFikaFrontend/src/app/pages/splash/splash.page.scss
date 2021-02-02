@@ -1,0 +1,15 @@
+*{
+    font-weight: 300;
+}
+
+ion-content{
+    --background: linear-gradient(120deg, #040a5f 0%, #00021b 100%);
+}
+
+.company {
+    bottom: 3%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+}

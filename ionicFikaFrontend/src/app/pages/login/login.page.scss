@@ -1,0 +1,102 @@
+ion-content{
+    --background: white;
+}
+
+*{
+    font-weight: 300;
+}
+
+.header{
+    height:  290px;
+    width: 350px;
+    background: linear-gradient(120deg, #040a5f 0%, #00021b 100%);
+    transform: rotate(-15deg);
+    border-radius: 50px 50px 50px 100px;
+    margin-left: -10%;
+    margin-top: -25%;
+}
+
+.header-content{
+    position: absolute;
+    top: 70%;
+
+    h2{
+        font-size: 20px;
+        color: white;
+        transform: rotate(15deg);
+        text-align: center;
+
+    }
+}
+
+ion-text{
+    h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    h2{
+        font-size: 9px;
+        color: grey;
+        text-align: center;
+    }
+    
+    h4{
+        font-size: 9px;
+        color: #040a5f;
+        text-align:center;   
+    }
+
+    h3{
+        font-size: 9px;
+        float: right;
+    }
+        
+}
+
+.input{
+
+    bottom: 15%;
+    position: absolute;
+
+    ion-card{
+        border-radius: 20px;
+    }
+    ion-label{
+        font-size: 9px;
+    }
+
+    ion-input{
+        border: 0.5px solid grey;
+        border-radius: 18px;
+    }
+
+    ion-button{
+        position: relative;
+        --border-radius: 20px;
+        --box-shadow: none;
+        --background: linear-gradient(120deg, #040a5f 0%, #00021b 100%);
+        text-transform: initial;
+        font-size: 12px;
+        display: block;
+        width: 70%;
+        margin-left: 15%;
+        font-weight: bold;
+    }
+
+}
+
+.actions{
+    //position: absolute;
+    margin-top: 125%;
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+        h1{
+            font-size: 25px;
+            font-weight: bold;
+            color: #040a5f;
+        }
+
+}

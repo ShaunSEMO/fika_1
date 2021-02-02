@@ -1,0 +1,29 @@
+#map {
+    min-height: 72%;
+    border-radius: 25px;
+}
+
+ion-fab{
+    top:5%;
+}
+
+.choose{
+    background-color: white;
+    padding: 20px;
+    max-height: fit-content;
+
+    ion-grid{
+        h1{
+            font-size: 8px;
+        }
+    }
+    
+}
+
+ion-select{
+    min-width: 90%;
+    margin-left: 5%;
+    padding: 3px;
+    border: 0.5px solid #00021b;
+    border-radius: 14px;
+}

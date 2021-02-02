@@ -1,0 +1,7 @@
+{
+  "name": "ionicFikaFrontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
