@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { ChoosePlatformPage } from './choose-platform.page';
@@ -7,7 +7,7 @@ describe('ChoosePlatformPage', () => {
   let component: ChoosePlatformPage;
   let fixture: ComponentFixture<ChoosePlatformPage>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ChoosePlatformPage ],
       imports: [IonicModule.forRoot()]
