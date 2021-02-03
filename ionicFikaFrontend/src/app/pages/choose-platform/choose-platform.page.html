@@ -5,7 +5,7 @@
 
     <!-- No preffered -->
 
-    <ion-item lines="none">
+    <ion-item lines="none" (click)="choosePlatAction('noPref')">
       <ion-grid>
         <ion-row class="ion-align-items-center">
 
@@ -27,7 +27,7 @@
 
      <!-- Preferred platform -->
 
-     <ion-item lines="none">
+     <ion-item lines="none" (click)="choosePlatAction('Pref')">
       <ion-grid>
         <ion-row class="ion-align-items-center">
 
@@ -57,7 +57,7 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-card>
+          <ion-card (click)="choosePlatAction('Wits')">
             <img src="../../../assets/witsStabus.png" />
           </ion-card>
         </ion-col>

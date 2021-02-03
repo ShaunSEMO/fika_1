@@ -10,23 +10,23 @@
     <form> 
       <ion-item lines="none">
         <ion-label position="stacked">Username</ion-label>
-        <ion-input name="emailAdress" [(ngModel)]="data.username"></ion-input>
+        <ion-input name="emailAdress" [(ngModel)]="user.username"></ion-input>
       </ion-item>
 
       <ion-item lines="none">
         <ion-label position="stacked">Email Address</ion-label>
-        <ion-input name="emailAdress" [(ngModel)]="data.emailAdress"></ion-input>
+        <ion-input name="emailAdress" [(ngModel)]="user.email"></ion-input>
       </ion-item>
 
       <ion-item lines="none">
-        <ion-select placeholder="Preffered Platform">
+        <ion-select placeholder="Preffered Platform" [(ngModel)]="user.prefPlatform">
           <ion-select-option value="stabusWits">Wits Stabus</ion-select-option>
         </ion-select>
       </ion-item>
   
       <ion-item lines="none">
         <ion-label position="stacked">Password</ion-label>
-        <ion-input type="password" name="password" [(ngModel)]="data.password"></ion-input>
+        <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
 
       <ion-item lines="none">

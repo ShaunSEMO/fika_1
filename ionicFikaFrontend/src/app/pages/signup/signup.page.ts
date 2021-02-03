@@ -8,6 +8,13 @@ import {Router} from '@angular/router';
 })
 export class SignupPage implements OnInit {
 
+  private user = {
+    username: '',
+    email: '',
+    prefPlatform: '',
+    password: ''
+  }
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -15,6 +22,10 @@ export class SignupPage implements OnInit {
 
   loginAction(){
     this.router.navigate(['signup']);
+  }
+
+  mainAction(){
+    this.router.navigate(['choose-platform']);
   }
 
 }
