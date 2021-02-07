@@ -3,6 +3,7 @@ import * as L from "leaflet";
 import { from } from 'rxjs';
 // import { Socket } from 'ng-socket-io';
 import { NavigationExtras, Router } from '@angular/router';
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-choose-start-dest',
@@ -11,7 +12,7 @@ import { NavigationExtras, Router } from '@angular/router';
 })
 export class ChooseStartDestPage implements OnInit {
 
-  map: L.Map;
+  private map: L.Map;
 
   public trip = {
     start: '',
@@ -23,26 +24,36 @@ export class ChooseStartDestPage implements OnInit {
     // private socket: Socket
   ) { }
 
-  ngOnInit() {
-    this.map = L.map('map').fitWorld();
+  ngOnInit() {}
 
-    L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Kp7XziF7klfNmnQetZNl', {
-      maxZoom: 18,
-    }).addTo(this.map);
+  ngAfterViewInit(){ 
+    $(document).ready(function(){ 
 
-    //centre at user
-    this.map.locate({
-      setView: true,
-      maxZoom: 14
-    }).on('locationfound', (e) => {
-      console.log('Location found');
-    })
+      this.map = L.map('map', {
+        center: [ -26.190555,28.03 ],
+        zoom: 15,
+        renderer: L.canvas()
+      })
+  
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: 'FIKA',
+      }).addTo(this.map)
+  
+  
+      setTimeout(() => {
+        this.map.invalidateSize();
+      }, 1000);
 
+      // socket.onmessage = (e) => {
+      //   let parsed_data = JSON.parse(e.data);
 
-    setTimeout(() => {
-      this.map.invalidateSize();
-    }, 0);
-  }
+      //   L.marker([parsed_data['lat'], parsed_data['lon']], {icon: carIcon}).addTo(map)
+      //     .bindPopup('The bus right here');
+      //   console.log(parsed_data)
+      // }
+    }); 
+  } 
 
   goAction(){
     // this.socket.emit('set-start', this.trip.start);

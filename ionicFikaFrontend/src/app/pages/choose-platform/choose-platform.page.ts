@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choose-platform',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChoosePlatformPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-  }z
+  }
+
+  choosePlatAction(plat: string){
+    switch(plat){
+      case "noPref":
+        this.router.navigateByUrl('choose-route', {state:{
+          'Platform' : 'none'
+      }});
+      case "Pref":
+        this.router.navigateByUrl('choose-route', {state:{
+          'Platform' : 'userPref'
+      }});
+      case "Wits":
+        this.router.navigateByUrl('choose-route', {state:{
+          'Platform' : 'Wits'
+      }});
+    }
+  }
 
 }
