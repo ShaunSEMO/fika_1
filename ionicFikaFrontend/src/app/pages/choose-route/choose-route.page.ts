@@ -29,7 +29,15 @@ export class ChooseRoutePage implements OnInit {
   ngAfterViewInit(){ 
     $(document).ready(function(){ 
 
-    //TODO: retrive live location from the db
+      let socket = new WebSocket('ws://127.0.0.1:8000/ws/trackBus')
+
+      // socket.onopen = (e) => {
+      //   alert('connection established')
+      // } 
+
+      // socket.onclose = (e) => {
+      //   alert('connection closed')
+      // }
 
     //TODO: get start location from db (long and lat) for map centering
       this.map = L.map('map', {
@@ -52,18 +60,24 @@ export class ChooseRoutePage implements OnInit {
       this.trackedRoute = [];
 
       // TODO: get live location data
-      // socket.onmessage = (e) => {
-      //   let parsed_data = JSON.parse(e.data);
+      socket.onmessage = (e) => {
+        let parsed_data = JSON.parse(e.data);
+
+        this.map.panTo(new L.LatLng(parsed_data['lat'], parsed_data['lon']))
   
-        // if(this.trackedRoute.length > 1){
-        //   this.trackedRoute.push({lat: parsed_data['lat'], lng: parsed_data['lon']});
-        //   // var polyline = L.polyline(this.trackedRoute, {color: 'blue'});
-        //   // polyline.addTo(this.map);
-        // }
-        // else{
-        //   this.trackedRoute.push({lat: parsed_data['lat'], lng: parsed_data['lon']});
-        // }
-      // }
+        if(this.trackedRoute.length > 1){
+          this.trackedRoute.push({lat: parsed_data['lat'], lng: parsed_data['lon']});
+          var polyline = L.polyline(this.trackedRoute, {color: 'blue'});
+          polyline.addTo(this.map);
+        }
+        else{
+          this.trackedRoute.push({lat: parsed_data['lat'], lng: parsed_data['lon']});
+        }
+
+        // L.marker([parsed_data['lat'], parsed_data['lon']]).addTo(this.map)
+        //     .bindPopup('The bus right here');
+          console.log(parsed_data)
+      }
     }); 
   }
 }
