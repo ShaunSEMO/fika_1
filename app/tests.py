@@ -7,7 +7,7 @@ import random
 # Create your tests here.
 ws=websocket.WebSocket()
 
-ws.connect('ws://192.168.43.195:8000/ws/trackBus')
+ws.connect('ws://127.0.0.1:8000/ws/trackBus')
 
 for i in range(1000):
     time.sleep(0.5)

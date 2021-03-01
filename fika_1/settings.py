@@ -26,7 +26,7 @@ SECRET_KEY = '+=!hd4^lxihh4-+3k#*t@en51@y&4*h_l#n)(053jl&$=+mi_d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.43.195', '127.0.0.1']
+ALLOWED_HOSTS = ['192.168.43.195', '127.0.0.1', '.herokuapp.com', '0.0.0.0']
 
 
 # Application definition
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'fika_1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'fika_front/build'), 'templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'ionicFikaFrontend/src'), 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,14 +81,33 @@ ASGI_APPLICATION = 'fika_1.routing.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'fika_project',
-        'USER': 'tshego',
-        'HOST': '127.0.0.1',
-        'PASSWORD': 'root',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.contrib.gis.db.backends.postgis',
+#         'NAME': 'fika_project',
+#         'USER': 'tshego',
+#         'HOST': '127.0.0.1',
+#         'PASSWORD': 'root',
+#         'PORT': '5432',
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'thinksui_db',
+#         'USER': 'thinksui_application',
+#         'HOST': '68.66.248.29',
+#         'PASSWORD': 'Changesoon*',
+#         'PORT': '3306',
+#     }
+# }
 
 
 # Password validation
@@ -109,10 +128,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CHANNEL_LAYERS ={
+CHANNEL_LAYERS = {
     "default": {
-        "BACKEND":"channels.layers.InMemoryChannelLayer"
-    }
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+            
+        },
+    },
 }
 
 
@@ -133,8 +156,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-
+STATIC_URL = 'ionicFrontend/assets/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'fika_front/build/static')
+    os.path.join(BASE_DIR, 'ionicFrontend/assets')
 ]
