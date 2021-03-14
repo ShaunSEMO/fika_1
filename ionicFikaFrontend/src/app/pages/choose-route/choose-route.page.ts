@@ -29,7 +29,7 @@ export class ChooseRoutePage implements OnInit {
   ngAfterViewInit(){ 
     $(document).ready(function(){ 
 
-      let socket = new WebSocket('ws://127.0.0.1:8000/ws/trackBus')
+      let socket = new WebSocket('ws://192.168.1.127:8001/ws/trackBus')
 
       // socket.onopen = (e) => {
       //   alert('connection established')
