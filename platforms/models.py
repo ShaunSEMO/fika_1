@@ -4,6 +4,7 @@ from django.db import models
 class Platform(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='platformImages', default='platformImage')
 
     def __str__(self):
         return f'{self.id} _ {self.name}'
