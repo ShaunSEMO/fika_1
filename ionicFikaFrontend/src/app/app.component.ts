@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Platform } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Router } from '@angular/router';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-root',

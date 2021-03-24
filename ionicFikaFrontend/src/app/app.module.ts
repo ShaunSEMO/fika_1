@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http'
 // import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 
 // const config: SocketIoConfig = {url: 'http://localhost:8100', options: {}};
@@ -16,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
   entryComponents: [],
   imports: [
     BrowserModule, 
+    HttpClientModule,
     IonicModule.forRoot(),
     // SocketIoModule.forRoot(config), 
     AppRoutingModule 

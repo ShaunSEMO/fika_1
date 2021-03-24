@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 
 export class SharedService {
     readonly APIUrl = 'http://127.0.0.1:8000/api/';
-    readonly PhotoUrl = 'http://127.0.0.1:8000/media';
+    readonly PhotoUrl = 'http://127.0.0.1:8000/media/';
 
     constructor(private http:HttpClient) { }
 
