@@ -9,15 +9,24 @@
 
   <div class = "input formContainer">
     <form> 
-      <ion-item lines="none">
-        <ion-label position="stacked">Username</ion-label>
-        <ion-input name="emailAdress" [(ngModel)]="user.username"></ion-input>
-      </ion-item>
+        <ion-input name="emailAdress" [(ngModel)]="user.username" placeholder="Username"></ion-input>
 
+<<<<<<< HEAD
       <ion-item lines="none">
         <ion-label position="stacked">Email Address</ion-label>
         <ion-input name="emailAdress" [(ngModel)]="user.email"></ion-input>
       </ion-item>
+=======
+        <ion-input name="emailAdress" [(ngModel)]="user.email" placeholder="Email Address"></ion-input>
+
+        <ion-input type="password" name="password" [(ngModel)]="user.password" placeholder="Password"></ion-input>
+
+     <!-- <ion-item lines="none">
+        <ion-select placeholder="Preffered Platform" [(ngModel)]="user.prefPlatform">
+          <ion-select-option value="stabusWits">Wits Stabus</ion-select-option>
+        </ion-select>
+      </ion-item>-->
+>>>>>>> d58d7542c90abcb77fcb6f34f6df535b2a5b4edd
   
       <ion-item lines="none">
         <ion-label position="stacked">Password</ion-label>

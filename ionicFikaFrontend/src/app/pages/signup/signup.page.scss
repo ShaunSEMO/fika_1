@@ -4,6 +4,16 @@
     font-weight: 300;
 }
 
+.header{
+    position: absolute;
+    height:  40%;
+    width: 300%;
+    background: linear-gradient(120deg,  #ffffff 0%, #d0e1f9 10%, #283655 40%, #1e1f26 70%);
+    transform: rotate(-15deg);
+    border-radius: 50px 50px 50px 100px;
+    margin-left: -10%;
+    margin-top: -70%;
+
 .formContainer{
     width: 85%;
     height: 80%;
@@ -14,6 +24,7 @@
 
 .accountBtn{
       --background: #0B9CC9;
+
 }
 
 
@@ -23,13 +34,6 @@
     position: absolute;
     top: 70%;
 
-    h2{
-        font-size: 20px;
-        color: white;
-        transform: rotate(15deg);
-        text-align: center;
-
-    }
 }
 
 ion-text{
@@ -37,52 +41,64 @@ ion-text{
         font-size: 30px;
         text-align: center;
     }
-    h2{
-        font-size: 9px;
-        color: grey;
-        text-align: center;
-    }
     
-    h4{
-        font-size: 9px;
-        color: #040a5f;
-        text-align:center;   
-    }
-
+    //Signup using Social Media
     h3{
         font-size: 9px;
-        float: right;
+        color: #283655;
+        font-weight: bold;
     }
         
 }
 
 .input{
 
-    bottom: 12%;
+    bottom: 15%;
     position: absolute;
+    width: 100%;
+    padding: 0;
+    right: 0;
 
-    ion-card{
-        border-radius: 20px;
-    }
-    ion-label{
-        font-size: 9px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     ion-input{
-        border: 0.5px solid grey;
+        border: 0.5px solid #283655;
         border-radius: 18px;
+        width: 80%;
+        left: 10%;
+        margin-bottom: 4%;
+        padding-left: 6px;
+    }
+
+    ion-select{
+        border: 0.5px solid #283655;
+        border-radius: 18px;
+        width: 90%;
+        margin-left: 4.4%;
+        padding-left: 6px;
+        margin-bottom: 4%;
     }
 
     ion-button{
-        position: relative;       
-          
+        position: relative;
+        --border-radius: 20px;
+        --box-shadow: none;
+        --background: linear-gradient(120deg, #1e1f26 30%, #283655 100%);
+        //text-transform: initial;
+        font-size: 12px;
+        display: block;
+        width: 70%;
+        left: 15%;
+        font-weight: bold;     
+
     }
 
 }
 
 .actions{
-    //position: absolute;
-    margin-top: 157%;
+    margin-top: 200%;
     font-size: 9px;
     display: flex;
     justify-content: center;
@@ -91,7 +107,7 @@ ion-text{
         h1{
             font-size: 25px;
             font-weight: bold;
-            color: #040a5f;
+            color: #4d648d;
         }
 
 }
