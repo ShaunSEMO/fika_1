@@ -7,19 +7,26 @@ ion-content{
 }
 
 .header{
-    height:  40%;
-    width: 300%;
-    background: linear-gradient(120deg,  #ffffff 0%, #d0e1f9 10%, #283655 40%, #1e1f26 70%);
+    height:  290px;
+    width: 350px;
+    background: linear-gradient(120deg, #040a5f 0%, #00021b 100%);
     transform: rotate(-15deg);
     border-radius: 50px 50px 50px 100px;
     margin-left: -10%;
-    margin-top: -50%;
+    margin-top: -25%;
 }
 
 .header-content{
     position: absolute;
     top: 70%;
 
+    h2{
+        font-size: 20px;
+        color: white;
+        transform: rotate(15deg);
+        text-align: center;
+
+    }
 }
 
 ion-text{
@@ -27,32 +34,30 @@ ion-text{
         font-size: 30px;
         text-align: center;
     }
+    h2{
+        font-size: 9px;
+        color: grey;
+        text-align: center;
+    }
     
-    //Login using Social Media
+    h4{
+        font-size: 9px;
+        color: #040a5f;
+        text-align:center;   
+    }
+
     h3{
         font-size: 9px;
-        color: #283655;
-        font-weight: bold;
+        float: right;
     }
         
-}
-
-//forgot password
-h4{
-    font-size: 9px;
-    color: #4d648d;
-    text-align: right;
-    margin-right: 11%;   
 }
 
 .input{
 
     bottom: 15%;
     position: absolute;
-    width: 100%;
-    padding: 0;
-    right: 0;
-  
+
     ion-card{
         border-radius: 6px;
     }
@@ -77,7 +82,7 @@ h4{
 
 .actions{
     //position: absolute;
-    margin-top: 155%;
+   // margin-top: 125%;
     font-size: 9px;
     display: flex;
     justify-content: center;
@@ -86,7 +91,7 @@ h4{
         h1{
             font-size: 25px;
             font-weight: bold;
-            color: #4d648d;
+            color: #040a5f;
         }
 
 }

@@ -11,27 +11,10 @@ ion-fab{
     background-color: white;
     padding: 20px;
     max-height: fit-content;
-    border-top: 1px solid #4d648d;
-    border-radius: 20px 20px 0px 0px;
 
     ion-grid{
         h1{
-            font-size: 9px;
-            color: #4d648d;
-        }
-
-        h2{
             font-size: 8px;
-            color: #283655;
-        }
-
-        .info{
-            background-color: #d0e1f9;
-            border-radius: 20px;
-            margin-bottom: 5px;
-        }
-        ion-col{
-            padding-left: 8px;
         }
     }
     

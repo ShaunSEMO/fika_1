@@ -1,23 +1,20 @@
 #map {
     min-height: 72%;
-    border-radius: 0px 0px 30px 30px;
+    border-radius: 25px;
 }
 
 ion-fab{
     top:5%;
-    position: absolute;
 }
 
 .choose{
     background-color: white;
     padding: 20px;
-    border-top: 1px solid #4d648d;
-    border-radius: 20px 20px 0px 0px;
 
     ion-button{
         --border-radius: 20px;
         --box-shadow: none;
-        --background: linear-gradient(120deg, #1e1f26 30%, #283655 100%);
+        --background: linear-gradient(120deg, #040a5f 0%, #00021b 100%);
     }
     
 }
