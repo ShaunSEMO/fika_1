@@ -14,7 +14,29 @@ import * as $ from "jquery";
 export class ChooseStartDestPage implements OnInit {
 
   private map: L.Map;
-  Stops:any=[];
+  Stops:any=[
+  //   {
+  //     "id": 1,
+  //     "route_id": 1,
+  //     "location": "Amic Deck",
+  //     "lat": "-26.191570",
+  //     "lon": "28.028340"
+  // },
+  // {
+  //     "id": 2,
+  //     "route_id": 1,
+  //     "location": "Rosebank",
+  //     "lat": "-26.147820",
+  //     "lon": "28.042600"
+  // },
+  // {
+  //     "id": 4,
+  //     "route_id": 3,
+  //     "location": "Parktown",
+  //     "lat": "-26.181311",
+  //     "lon": "28.038944"
+  // }
+  ];
 
   public trip = {
     start: '',
@@ -45,11 +67,23 @@ export class ChooseStartDestPage implements OnInit {
         attribution: 'FIKA',
       }).addTo(this.map)
 
-      this.Stops.forEach(stop => {
-        L.marker([stop.lat, stop.lon]).addTo(this.map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-        .openPopup();
-      });
+      L.marker([-26.191570, 28.028340]).addTo(this.map)
+      .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
+
+      for(let i = 0;i<=this.Stops.length;i++) {
+        L.marker([-26.191570, 28.028340]).addTo(this.map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
+      }
+
+      for (let i = 0; i < this.Stops.length; i++) {
+        L.marker([-26.191570, 28.028340]).addTo(this.map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
+      }
+
+      // this.Stops.forEach(stop => {
+      //   L.marker([-26.191570, 28.028340]).addTo(this.map)
+      //   .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
+      // });
 
       
   
@@ -75,7 +109,7 @@ export class ChooseStartDestPage implements OnInit {
     };
     document.getElementById("map").outerHTML = "";
     
-    this.router.navigate(['choose-route'], navigationExtras);
+    this.router.navigate(['trip-dets'], navigationExtras);
   }
 
 }
