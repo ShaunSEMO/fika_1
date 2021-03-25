@@ -11,10 +11,10 @@
     <h2>Quick Access</h2>
 
 
-    <!-- No preffered -->
+    <!-- No preffered 
 
     <ion-item lines="none" (click)="choosePlatAction('noPref')">
-      <ion-grid>
+      
         <ion-row class="ion-align-items-center">
 
           <ion-col size="4">
@@ -28,7 +28,7 @@
           </ion-col>
 
         </ion-row>
-      </ion-grid>
+      
     </ion-item>
 
      <!-- Preferred platform -->
@@ -52,42 +52,24 @@
         </ion-row>
       </ion-grid>
     </ion-item>
-  </div>
+  </div> -->
 
   <div class="all">
 
     <h2>All Platforms</h2>
 
     <ion-searchbar></ion-searchbar>
-
+    
     <ion-grid>
-      <ion-row>
+      <ion-row *ngFor='let dataItem of Platforms'>
         <ion-col>
           <ion-card (click)="choosePlatAction('Wits')">
             <img src="../../../assets/witsStabus.png" />
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card>
-            <img src="../../../assets/newPlatformComing.png" />
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-card>
-            <img src="../../../assets/newPlatformComing.png" />
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card>
-            <img src="../../../assets/newPlatformComing.png" />
+            <h3>{{ dataItem.name }}</h3>
           </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </div>
+  </div>-->
 
 </ion-content>

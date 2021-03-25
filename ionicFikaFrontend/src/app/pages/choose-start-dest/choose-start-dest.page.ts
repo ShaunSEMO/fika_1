@@ -35,7 +35,7 @@ export class ChooseStartDestPage implements OnInit {
         renderer: L.canvas()
       })
   
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      L.tileLayer('https://api.mapbox.com/styles/v1/lwazimaps/ckm8io7vy02qj17p3u2r5dpcz/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHdhemltYXBzIiwiYSI6ImNrbThnMHFjZTBsZXQycG51bTVsanFkNmMifQ.8xgG88yyHGZ6DB_6Y-nI_Q', {
         maxZoom: 18,
         attribution: 'FIKA',
       }).addTo(this.map)
@@ -56,9 +56,6 @@ export class ChooseStartDestPage implements OnInit {
   } 
 
   goAction(){
-    // this.socket.emit('set-start', this.trip.start);
-    // this.socket.emit('set-end', this.trip.end);
-
 
     let navigationExtras: NavigationExtras = {
       state: {
@@ -66,6 +63,7 @@ export class ChooseStartDestPage implements OnInit {
       }
     };
     document.getElementById("map").outerHTML = "";
+    
     this.router.navigate(['choose-route'], navigationExtras);
   }
 

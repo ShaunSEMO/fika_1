@@ -13,13 +13,13 @@ export class LoginPage implements OnInit {
     password: ''
   }
 
-  constructor( private router: Router) { 
+  constructor( private router: Router) {
 
   }
 
   mainAction(){
 
-    //check credentials 
+    //check credentials
     this.router.navigate(['choose-platform']);
   }
 

@@ -1,6 +1,4 @@
-ion-content{
-    --background: white;
-}
+
 
 *{
     font-weight: 300;
@@ -15,7 +13,22 @@ ion-content{
     border-radius: 50px 50px 50px 100px;
     margin-left: -10%;
     margin-top: -70%;
+
+.formContainer{
+    width: 85%;
+    height: 80%;
+    background-color: #D9DEDE;
+    box-shadow: 0 6 12 rgba(0,0,0,0.2);
+    border-radius: 20px;
 }
+
+.accountBtn{
+      --background: #0B9CC9;
+
+}
+
+
+
 
 .header-content{
     position: absolute;
@@ -78,7 +91,8 @@ ion-text{
         display: block;
         width: 70%;
         left: 15%;
-        font-weight: bold;
+        font-weight: bold;     
+
     }
 
 }

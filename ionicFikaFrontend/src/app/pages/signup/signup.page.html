@@ -1,12 +1,14 @@
 <ion-content [fullscreen]="true" class="ion-padding">
 
-  <div  class="header">
+  <!--<div  class="header">
     <div class="header-content">
       
     </div>
- </div>
+ </div>-->
 
-  <div class = "input">
+ <div class="mainWrapper">
+
+  <div class = "input formContainer">
     <form> 
         <ion-input name="emailAdress" [(ngModel)]="user.username" placeholder="Username"></ion-input>
 
@@ -14,47 +16,42 @@
 
         <ion-input type="password" name="password" [(ngModel)]="user.password" placeholder="Password"></ion-input>
 
-      <ion-item lines="none">
+     <!-- <ion-item lines="none">
         <ion-select placeholder="Preffered Platform" [(ngModel)]="user.prefPlatform">
           <ion-select-option value="stabusWits">Wits Stabus</ion-select-option>
         </ion-select>
-      </ion-item>
-
+      </ion-item>-->
+  
       <ion-item lines="none">
-        <ion-button expand="block" (click)="mainAction()">SIGN UP</ion-button>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
       </ion-item>
 
+     
+      <div class="signupGroup">
       <ion-item lines="none"> 
         <ion-text>
-          <h3>Signup using social media</h3>
+          <h3>Creating an accout means you agree to our terms, conditions and Privacy Policy </h3>
         </ion-text>
       </ion-item>
 
+      <ion-item lines="none" >
+        <ion-button class ="accountBtn signUpBtn btnStyle accountInput" expand="block" (click)="mainAction()">CREATE ACCOUNT</ion-button>
+      </ion-item>
+
+      
       <ion-item lines="none">
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-icon name="logo-facebook" style="zoom:2.0;"></ion-icon>
-            </ion-col>
-
-            <ion-col>
-              <ion-icon name="mail-outline" style="zoom:2.0;"></ion-icon>
-            </ion-col>
-              
-            <ion-col>
-              <ion-icon name="logo-twitter" style="zoom:2.0;"></ion-icon>
-            </ion-col>
-
-          </ion-row>
-        </ion-grid>
+        <p>Already have an account? <span>Login</span></p>
       </ion-item>
     </form>
   </div>
+</div>
 
-  <div class="actions">
+ <div class="actions">
     <ion-text>
       <h1 (click)=loginAction()>LOGIN</h1>
     </ion-text>
   </div>
+
 
 </ion-content>

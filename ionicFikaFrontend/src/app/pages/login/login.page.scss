@@ -1,5 +1,5 @@
 ion-content{
-    --background: white;
+    --background: #D9DEDE;
 }
 
 *{
@@ -52,31 +52,25 @@ h4{
     width: 100%;
     padding: 0;
     right: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
+    ion-card{
+        border-radius: 6px;
+    }
+    ion-label{
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+        color: black;
+    }
 
     ion-input{
-        border: 0.5px solid #283655;
-        border-radius: 18px;
-        width: 80%;
-        left: 10%;
-        margin-bottom: 4%;
-        padding-left: 6px;
+        border: 0.5px solid grey;
+        border-radius: 6px;
+        padding-bottom: 0.875rem;
     }
 
     ion-button{
-        position: relative;
-        --border-radius: 20px;
-        --box-shadow: none;
-        --background: linear-gradient(120deg, #1e1f26 30%, #283655 100%);
-        //text-transform: initial;
-        font-size: 12px;
-        display: block;
-        width: 70%;
-        left: 15%;
-        font-weight: bold;
+        position: relative;  
+        margin-top: 2rem ;      
     }
 
 }
@@ -96,3 +90,4 @@ h4{
         }
 
 }
+
