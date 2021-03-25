@@ -55,29 +55,11 @@
     <ion-searchbar></ion-searchbar>
 
     <ion-grid>
-      <ion-row>
+      <ion-row *ngFor='let dataItem of Platforms'>
         <ion-col>
           <ion-card (click)="choosePlatAction('Wits')">
             <img src="../../../assets/witsStabus.png" />
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card>
-            <img src="../../../assets/newPlatformComing.png" />
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-card>
-            <img src="../../../assets/newPlatformComing.png" />
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card>
-            <img src="../../../assets/newPlatformComing.png" />
+            <h3>{{ dataItem.name }}</h3>
           </ion-card>
         </ion-col>
       </ion-row>
