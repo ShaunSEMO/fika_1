@@ -53,46 +53,13 @@
     <h2>All Platforms</h2>
 
     <ion-searchbar></ion-searchbar>
-
-    <ion-row class="platformCont">
-      <ion-card (click)="choosePlatAction('Wits')">
-      <ion-col class="platformText">
-        <span class="platformName">Wits University</span>
-        <span class="platformOperator">Stabus</span>
-        <span class="platformDsclmr" >NB! Must be a student</span>
-      </ion-col>
-      <ion-col>
-        <div class="platformImg ">
-          <img src="../../../assets/Wits.png">
-        </div>
-      </ion-col>
-    </ion-card>
-    </ion-row>
-
-   <!-- <ion-grid>
-      <ion-row>
+    
+    <ion-grid>
+      <ion-row *ngFor='let dataItem of Platforms'>
         <ion-col>
           <ion-card (click)="choosePlatAction('Wits')">
             <img src="../../../assets/witsStabus.png" />
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card>
-            <img src="../../../assets/newPlatformComing.png" />
-          </ion-card>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-card>
-            <img src="../../../assets/newPlatformComing.png" />
-          </ion-card>
-        </ion-col>
-
-        <ion-col>
-          <ion-card>
-            <img src="../../../assets/newPlatformComing.png" />
+            <h3>{{ dataItem.name }}</h3>
           </ion-card>
         </ion-col>
       </ion-row>

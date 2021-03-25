@@ -26,7 +26,7 @@ SECRET_KEY = '+=!hd4^lxihh4-+3k#*t@en51@y&4*h_l#n)(053jl&$=+mi_d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.43.195', '127.0.0.1', '.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['192.168.43.195', '127.0.0.1', '.herokuapp.com', '0.0.0.0', '192.168.1.127']
 
 
 # Application definition
@@ -41,10 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user_accounts',
     'app',
-    'platforms'
+    'platforms',
+    'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -52,7 +56,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = ['domain']
 
 ROOT_URLCONF = 'fika_1.urls'
 
@@ -161,3 +169,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'ionicFrontend/assets')
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -56,9 +56,6 @@ export class ChooseStartDestPage implements OnInit {
   } 
 
   goAction(){
-    // this.socket.emit('set-start', this.trip.start);
-    // this.socket.emit('set-end', this.trip.end);
-
 
     let navigationExtras: NavigationExtras = {
       state: {
@@ -66,6 +63,7 @@ export class ChooseStartDestPage implements OnInit {
       }
     };
     document.getElementById("map").outerHTML = "";
+    
     this.router.navigate(['choose-route'], navigationExtras);
   }
 
