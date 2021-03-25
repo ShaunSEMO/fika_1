@@ -54,7 +54,22 @@
 
     <ion-searchbar></ion-searchbar>
 
-    <ion-grid>
+    <ion-row class="platformCont">
+      <ion-card (click)="choosePlatAction('Wits')">
+      <ion-col class="platformText">
+        <span class="platformName">Wits University</span>
+        <span class="platformOperator">Stabus</span>
+        <span class="platformDsclmr" >NB! Must be a student</span>
+      </ion-col>
+      <ion-col>
+        <div class="platformImg ">
+          <img src="../../../assets/Wits.png">
+        </div>
+      </ion-col>
+    </ion-card>
+    </ion-row>
+
+   <!-- <ion-grid>
       <ion-row>
         <ion-col>
           <ion-card (click)="choosePlatAction('Wits')">
@@ -82,6 +97,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </div>
+  </div>-->
 
 </ion-content>
