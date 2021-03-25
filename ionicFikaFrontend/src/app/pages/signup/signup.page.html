@@ -6,7 +6,6 @@
     </div>
  </div>-->
 
- <div class="mainWrapper">
 
   <div class = "input formContainer">
     <form> 
@@ -19,12 +18,6 @@
         <ion-label position="stacked">Email Address</ion-label>
         <ion-input name="emailAdress" [(ngModel)]="user.email"></ion-input>
       </ion-item>
-
-     <!-- <ion-item lines="none">
-        <ion-select placeholder="Preffered Platform" [(ngModel)]="user.prefPlatform">
-          <ion-select-option value="stabusWits">Wits Stabus</ion-select-option>
-        </ion-select>
-      </ion-item>-->
   
       <ion-item lines="none">
         <ion-label position="stacked">Password</ion-label>
@@ -33,23 +26,23 @@
 
      
       <div class="signupGroup">
-      <ion-item lines="none"> 
-        <ion-text>
-          <h3>Creating an accout means you agree to our terms, conditions and Privacy Policy </h3>
-        </ion-text>
-      </ion-item>
+        <ion-item lines="none"> 
+          <ion-text>
+            <h3>Creating an account means you agree to our terms, conditions and Privacy Policy </h3>
+          </ion-text>
+        </ion-item>
 
-      <ion-item lines="none" >
-        <ion-button class ="accountBtn signUpBtn btnStyle accountInput" expand="block" (click)="mainAction()">CREATE ACCOUNT</ion-button>
-      </ion-item>
+        <ion-item lines="none" >
+          <ion-button class ="accountBtn signUpBtn btnStyle accountInput" expand="block" (click)="mainAction()">CREATE ACCOUNT</ion-button>
+        </ion-item>
 
-      
-      <ion-item lines="none">
-        <p>Already have an account? <span>Login</span></p>
-      </ion-item>
+        
+        <ion-item lines="none">
+          <p>Already have an account? <span>Login</span></p>
+        </ion-item>
+      </div>
     </form>
   </div>
-</div>
 
  <div class="actions">
     <ion-text>

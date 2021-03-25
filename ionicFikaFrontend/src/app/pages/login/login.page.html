@@ -2,38 +2,35 @@
 
 
   <div class="mainWrapper">
-    
-      
-    
  
-  <div class = "input formContainer">
-    <form>
-        
-        <ion-item lines="none">
-          <ion-label position="stacked">Email Address</ion-label>
-          <ion-input name="emailAdress" [(ngModel)]="user.email"></ion-input>
-        </ion-item>
-  
-        <ion-item lines="none">
-          <ion-label position="stacked">Password</ion-label>
-          <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
-        </ion-item>
-
-       
-
-        <ion-item lines="none">
-          <ion-button class ="accountBtn signUpBtn btnStyle accountInput" expand="block" (click)="mainAction()">LOGIN</ion-button>
-        </ion-item> 
-        <ion-item lines="none">
-          <ion-text>
-            <h4>Forgot Password?</h4>
-          </ion-text>
+    <div class = "input formContainer">
+      <form>
           
-        </ion-item>      
+          <ion-item lines="none">
+            <ion-label position="stacked">Email Address</ion-label>
+            <ion-input name="emailAdress" [(ngModel)]="user.email"></ion-input>
+          </ion-item>
+    
+          <ion-item lines="none">
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
+          </ion-item>
 
         
-    </form>
-  </div>
+
+          <ion-item lines="none">
+            <ion-button class ="accountBtn signUpBtn btnStyle accountInput" expand="block" (click)="mainAction()">LOGIN</ion-button>
+          </ion-item> 
+          <ion-item lines="none">
+            <ion-text>
+              <h4>Forgot Password?</h4>
+            </ion-text>
+            
+          </ion-item>      
+
+          
+      </form>
+    </div>
   </div>
 
   <div class="actions">

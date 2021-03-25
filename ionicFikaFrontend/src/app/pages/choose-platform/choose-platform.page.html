@@ -1,12 +1,12 @@
 <ion-content>
 
- <!-- <div class="quick">
+  <div class="quick">
 
 
-    <!-- No preffered 
+    <!-- No preffered -->
 
     <ion-item lines="none" (click)="choosePlatAction('noPref')">
-      
+      <ion-grid>
         <ion-row class="ion-align-items-center">
 
           <ion-col size="4">
@@ -22,7 +22,7 @@
           </ion-col>
 
         </ion-row>
-      
+      </ion-grid>
     </ion-item>
 
      <!-- Preferred platform -->
@@ -46,14 +46,14 @@
         </ion-row>
       </ion-grid>
     </ion-item>
-  </div> -->
+  </div>
 
   <div class="all">
 
     <h2>All Platforms</h2>
 
     <ion-searchbar></ion-searchbar>
-    
+
     <ion-grid>
       <ion-row *ngFor='let dataItem of Platforms'>
         <ion-col>
@@ -64,6 +64,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </div>-->
+  </div>
 
 </ion-content>
