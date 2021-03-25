@@ -80,4 +80,11 @@ export class ChooseRoutePage implements OnInit {
       }
     }); 
   }
+
+  chooseRouteAction(){
+
+    //have parameters to display relevant info on that next page
+    document.getElementById("map").outerHTML = "";
+    this.router.navigate(['trip-dets']);
+  }
 }
