@@ -18,9 +18,9 @@
 
   <div class="choose">
     
-    <!-- use *Ng to get use many routes as applicable and make them clickable-->
+    <!-- use *Ng to get use many routes as applicable and make them clicks direct trip details page with relevant info-->
     <ion-grid>
-      <ion-row>
+      <ion-row >
         <!-- HEADER ROW -->
         <ion-col>
           <h1>Route</h1>
@@ -33,39 +33,39 @@
         </ion-col>
       </ion-row>
 
-      <ion-row>
+      <ion-row class="info" (click)=chooseRouteAction()>
         <ion-col>
-          <h1>Direct</h1>
+          <h2>Direct</h2>
         </ion-col>
         <ion-col>
-          <h1>Amic 15:20</h1>
+          <h2>Amic 15:20</h2>
         </ion-col>
         <ion-col>
-          <h1>Junction 15:35</h1>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col>
-          <h1>Circuit</h1>
-        </ion-col>
-        <ion-col>
-          <h1>Amic 15:30</h1>
-        </ion-col>
-        <ion-col>
-          <h1>Junction 15:50</h1>
+          <h2>Junction 15:35</h2>
         </ion-col>
       </ion-row>
 
-      <ion-row>
+      <ion-row class="info" (click)=chooseRouteAction()>
         <ion-col>
-          <h1>Direct</h1>
+          <h2>Circuit</h2>
         </ion-col>
         <ion-col>
-          <h1>Amic 15:40</h1>
+          <h2>Amic 15:30</h2>
         </ion-col>
         <ion-col>
-          <h1>Junction 15:56</h1>
+          <h2>Junction 15:50</h2>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="info" (click)=chooseRouteAction()>
+        <ion-col>
+          <h2>Direct</h2>
+        </ion-col>
+        <ion-col>
+          <h2>Amic 15:40</h2>
+        </ion-col>
+        <ion-col>
+          <h2>Junction 15:56</h2>
         </ion-col>
       </ion-row>
 

@@ -1,18 +1,28 @@
 <ion-content>
 
- <!-- <div class="quick">
+<<<<<<< HEAD
+  <div class="quick">
+=======
+  <div class="intro">
+    <h1>Select a platform</h1>
+  </div>
+
+  
+
+  <div class="quick">
+
+    <h2>Quick Access</h2>
+>>>>>>> d58d7542c90abcb77fcb6f34f6df535b2a5b4edd
 
 
-    <!-- No preffered 
+    <!-- No preffered -->
 
     <ion-item lines="none" (click)="choosePlatAction('noPref')">
-      
+      <ion-grid>
         <ion-row class="ion-align-items-center">
 
           <ion-col size="4">
-            <ion-button color="light" fill="clear">
              <ion-icon name="ban-outline" style="zoom:2.0;"></ion-icon>
-            </ion-button>
           </ion-col>
 
           <ion-col size="8">
@@ -22,7 +32,7 @@
           </ion-col>
 
         </ion-row>
-      
+      </ion-grid>
     </ion-item>
 
      <!-- Preferred platform -->
@@ -46,14 +56,14 @@
         </ion-row>
       </ion-grid>
     </ion-item>
-  </div> -->
+  </div>
 
   <div class="all">
 
     <h2>All Platforms</h2>
 
     <ion-searchbar></ion-searchbar>
-    
+
     <ion-grid>
       <ion-row *ngFor='let dataItem of Platforms'>
         <ion-col>
@@ -64,6 +74,6 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </div>-->
+  </div>
 
 </ion-content>
