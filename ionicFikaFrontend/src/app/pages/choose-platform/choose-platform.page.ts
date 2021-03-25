@@ -16,15 +16,15 @@ export class ChoosePlatformPage implements OnInit {
   choosePlatAction(plat: string){
     switch(plat){
       case "noPref":
-        this.router.navigateByUrl('choose-route', {state:{
+        this.router.navigateByUrl('choose-start-dest', {state:{
           'Platform' : 'none'
       }});
       case "Pref":
-        this.router.navigateByUrl('choose-route', {state:{
+        this.router.navigateByUrl('choose-start-dest', {state:{
           'Platform' : 'userPref'
       }});
       case "Wits":
-        this.router.navigateByUrl('choose-route', {state:{
+        this.router.navigateByUrl('choose-start-dest', {state:{
           'Platform' : 'Wits'
       }});
     }

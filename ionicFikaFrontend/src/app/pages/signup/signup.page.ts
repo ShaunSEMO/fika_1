@@ -21,6 +21,9 @@ export class SignupPage implements OnInit {
   }
 
   loginAction(){
+    this.user.email='';
+    this.user.password='';
+    this.user.prefPlatform='';
     this.router.navigate(['signup']);
   }
 

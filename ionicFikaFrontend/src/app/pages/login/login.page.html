@@ -9,29 +9,19 @@
   <div class = "input">
     <form>
         
-        <ion-item lines="none">
-          <ion-label position="stacked">Email Address</ion-label>
-          <ion-input name="emailAdress" [(ngModel)]="user.email"></ion-input>
-        </ion-item>
+          <ion-input name="emailAdress" [(ngModel)]="user.email" placeholder="Email Address"></ion-input>
   
-        <ion-item lines="none">
-          <ion-label position="stacked">Password</ion-label>
-          <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
-        </ion-item>
+          <ion-input type="password" name="password" [(ngModel)]="user.password" placeholder="Password"></ion-input>
 
-        <ion-item lines="none">
-          <ion-text>
-            <h4>Forgot Password?</h4>
-          </ion-text>
-          
-        </ion-item>
+          <h4>Forgot Password?</h4>
 
         <ion-item lines="none">
           <ion-button expand="block" (click)="mainAction()">LOGIN</ion-button>
         </ion-item>
+        
         <ion-item lines="none"> 
           <ion-text>
-            <h3>Or login using social media</h3>
+            <h3>Login using social media</h3>
           </ion-text>
         </ion-item>
 

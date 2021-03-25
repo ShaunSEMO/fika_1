@@ -1,5 +1,5 @@
 #map {
-    min-height: 70%;
+    min-height: 55%;
     border-radius: 0 0 25px 25px;
 }
 
@@ -20,57 +20,72 @@
 // }
 
 ion-content{
-    h1{
-        font-size: 9px;
-        font-weight: bold;
-        line-height: 10px
-    }
-    h2{
-        font-size: 8px;
-        color: gray;
-        line-height: 2px
-    }
-    h3{
-        font-size: 9px;
-        line-height: 2px;
-        margin-bottom: 20px;
-        color: #040a5f;
-    }
-    h4{
-        font-size: 8px;
-        color: gray;
-    }
 
-    ion-card{
-        padding: 3px;
-        margin-top: 5%;
-        ion-card-header{
-
-            h1{
-                margin-top: 2%;
-                font-size: 10px;
-                color: black;
-            }
-            h2{
-                font-size: 8px;
-                color: gray;
-            }
-                
-        }
-
-        h3{
-            font-size: 8px;
-            color: black;
-            margin-left: 16%;
-
-        }
-    }
-
+    .dets{
+        background-color: white;
+        padding: 10px;
+        border-top: 1px solid #4d648d;
+        border-radius: 20px 20px 0px 0px;
     
-}
+        h1{
+            font-size: 10px;
+            font-weight: bold;
+            line-height: 10px;
+            align-items: center;
+            color: #283655;
+        }
+        h2{
+            font-size: 8px;
+            color: #4d648d;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 9px;
+            margin-top: 1%;
+            color: #4d648d;
+            margin-bottom: 8%;
+        }
+        h4{
+            color: #1e1f26;
+            font-size: 8px;
+            line-height: 1px;
 
-ion-fab{
-    top:5%;
-    position: relative;
+        }
+    
+        ion-card{
+            padding: 3px;
+            margin-top: 5%;
+            ion-card-header{
+    
+                h1{
+                    margin-top: 2%;
+                    font-size: 10px;
+                    color: #4d648d;
+                }
+                h2{
+                    font-size: 8px;
+                    color: gray;
+                }
+                    
+            }
+    
+            h3{
+                font-size: 8px;
+                color: #4d648d;
+                margin-left: 16%;
+    
+            }
+            h4{
+                font-size: 8px;
+                color: #283655;
+                margin-left: 16%;
+            }
+        }
+    }
+
+    ion-fab{
+        top:5%;
+    }
+    
 }
 
