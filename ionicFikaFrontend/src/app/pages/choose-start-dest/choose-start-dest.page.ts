@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service'
 import * as L from "leaflet";
 import { from } from 'rxjs';
 // import { Socket } from 'ng-socket-io';
@@ -13,6 +14,7 @@ import * as $ from "jquery";
 export class ChooseStartDestPage implements OnInit {
 
   private map: L.Map;
+  Stops:any=[];
 
   public trip = {
     start: '',
@@ -21,10 +23,13 @@ export class ChooseStartDestPage implements OnInit {
 
   constructor(
     private router: Router,
+    private service: SharedService,
     // private socket: Socket
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.refreshStopList();
+  }
 
   ngAfterViewInit(){ 
     $(document).ready(function(){ 
@@ -39,21 +44,27 @@ export class ChooseStartDestPage implements OnInit {
         maxZoom: 18,
         attribution: 'FIKA',
       }).addTo(this.map)
-  
+
+      this.Stops.forEach(stop => {
+        L.marker([stop.lat, stop.lon]).addTo(this.map)
+        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .openPopup();
+      });
+
+      
   
       setTimeout(() => {
         this.map.invalidateSize();
       }, 1000);
 
-      // socket.onmessage = (e) => {
-      //   let parsed_data = JSON.parse(e.data);
-
-      //   L.marker([parsed_data['lat'], parsed_data['lon']], {icon: carIcon}).addTo(map)
-      //     .bindPopup('The bus right here');
-      //   console.log(parsed_data)
-      // }
     }); 
   } 
+
+  refreshStopList() {
+    this.service.getStops().subscribe(data=>{
+      this.Stops=data
+    });
+  }
 
   goAction(){
 

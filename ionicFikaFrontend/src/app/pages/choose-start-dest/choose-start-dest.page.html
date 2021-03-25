@@ -1,5 +1,7 @@
 <ion-content>
 
+
+
   <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
     <ion-fab-button color="light">
       <ion-icon name="menu"></ion-icon>
@@ -20,27 +22,27 @@
     
     <ion-item lines="none">
       <ion-select [(ngModel)]="trip.start" placeholder="Choose start station">
-        <ion-select-option value="AMIC">Amic Deck</ion-select-option>
-        <ion-select-option value="EOH">EOH</ion-select-option>
+        <ion-select-option *ngFor='let dataItem of Stops' value='{{ dataItem.location }}'>{{ dataItem.location }}</ion-select-option>
+        <!-- <ion-select-option value="EOH">EOH</ion-select-option>
         <ion-select-option value="KNK">Knockando</ion-select-option>
         <ion-select-option value="REN">Rennie House</ion-select-option>
         <ion-select-option value="ROS">Rosebank</ion-select-option>
         <ion-select-option value="WEC">WEC</ion-select-option>
         <ion-select-option value="WJ">Wits Junction</ion-select-option>
-        <ion-select-option value="YVL">Yale Village</ion-select-option>
+        <ion-select-option value="YVL">Yale Village</ion-select-option> -->
       </ion-select>
     </ion-item>
 
-    <ion-item lines="none">
+    <ion-item  lines="none">
       <ion-select [(ngModel)]="trip.end" placeholder="Choose end station" aria-required="required">
-        <ion-select-option value="AMIC">Amic Deck</ion-select-option>
-        <ion-select-option value="EOH">EOH</ion-select-option>
+        <ion-select-option *ngFor='let dataItem of Stops'  value="{{ dataItem.location }}">{{ dataItem.location }}</ion-select-option>
+        <!-- <ion-select-option value="EOH">EOH</ion-select-option>
         <ion-select-option value="KNK">Knockando</ion-select-option>
         <ion-select-option value="REN">Rennie House</ion-select-option>
         <ion-select-option value="ROS">Rosebank</ion-select-option>
         <ion-select-option value="WEC">WEC</ion-select-option>
         <ion-select-option value="WJ">Wits Junction</ion-select-option>
-        <ion-select-option value="YVL">Yale Village</ion-select-option>
+        <ion-select-option value="YVL">Yale Village</ion-select-option> -->
       </ion-select>
     </ion-item>
 

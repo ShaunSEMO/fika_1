@@ -11,17 +11,6 @@ export class ChoosePlatformPage implements OnInit {
 
   constructor(private router: Router, private service: SharedService) { }
 
-  // Platforms:any=[
-  //   {
-  //     "id": 1,
-  //     "name": "Wits"
-  //   },
-  //   {
-  //       "id": 2,
-  //       "name": "Rea Vaya"
-  //   }
-  // ];
-
   Platforms:any=[];
 
   ngOnInit() {
