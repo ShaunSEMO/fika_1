@@ -76,6 +76,8 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
+
+
 @media (prefers-color-scheme: dark) {
   /*
    * Dark Colors
@@ -153,7 +155,7 @@
    */
 
   .ios body {
-    --ion-background-color: #000000;
+    --ion-background-color: #D9DEDE;
     --ion-background-color-rgb: 0,0,0;
 
     --ion-text-color: #ffffff;
@@ -181,7 +183,7 @@
 
     --ion-toolbar-background: #0d0d0d;
 
-    --ion-item-background: #000000;
+    --ion-item-background: #D9DEDE;
 
     --ion-card-background: #1c1c1d;
   }
@@ -229,4 +231,35 @@
 
     --ion-card-background: #1e1e1e;
   }
+}
+
+.item-input{
+  --background: #D9DEDE;
+}
+
+.item {
+  --background: #D9DEDE;
+}
+
+.btnStyle {
+  box-shadow: 0 6 5 rgba(0,0,0,0.2);
+  
+}
+
+.accountInput{
+  width: 100%;
+  --border-radius: 6px;
+  height: 2.75rem;
+
+}
+
+.item-content {
+  background-color:rgba(0,0,0,0.0);
+}
+
+/* for font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
 }
