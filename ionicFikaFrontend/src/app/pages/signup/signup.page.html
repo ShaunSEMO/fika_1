@@ -7,6 +7,7 @@
  </div>-->
 
  <div class="mainWrapper">
+   <div class="platfromWrapper">
   <div class="platformCont" (click)="choosePlatAction('Wits')">
           
     <div class="platformText">
@@ -16,53 +17,54 @@
     </div>     
   
     <div class="platformImg"><img src="../../assets/Wits.png" alt=""></div>
+  </div>
+    <div class = "input formContainer">
+      <form> 
+        <ion-item lines="none">
+          <ion-label position="stacked">Username</ion-label>
+          <ion-input name="emailAdress" [(ngModel)]="user.username"></ion-input>
+        </ion-item>
   
-
+        <ion-item lines="none">
+          <ion-label position="stacked">Email Address</ion-label>
+          <ion-input name="emailAdress" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+  
+       <!-- <ion-item lines="none">
+          <ion-select placeholder="Preffered Platform" [(ngModel)]="user.prefPlatform">
+            <ion-select-option value="stabusWits">Wits Stabus</ion-select-option>
+          </ion-select>
+        </ion-item>-->
+    
+        <ion-item lines="none">
+          <ion-label position="stacked">Password</ion-label>
+          <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+  
+       
+        <!-- <div class="signupGroup"> -->
+          <ion-item lines="none"> 
+            <ion-text>
+              <h3>Creating an accout means you agree to our terms, conditions and Privacy Policy </h3>
+            </ion-text>
+          </ion-item>
+  
+          <ion-item lines="none" >
+            <ion-button class ="accountBtn signUpBtn btnStyle accountInput" expand="block" (click)="mainAction()">CREATE ACCOUNT</ion-button>
+          </ion-item>
+        <!-- </div> -->
+  
+  
+        
+        <ion-item lines="none">
+          <p class="actions">Already have an account? <span (click)=loginAction() style="color:#0B9CC9;">&nbsp; Login</span></p>
+        </ion-item>
+      </form>
+    
+  </div>
 </div>
 
-  <div class = "input formContainer">
-    <form> 
-      <ion-item lines="none">
-        <ion-label position="stacked">Username</ion-label>
-        <ion-input name="emailAdress" [(ngModel)]="user.username"></ion-input>
-      </ion-item>
 
-      <ion-item lines="none">
-        <ion-label position="stacked">Email Address</ion-label>
-        <ion-input name="emailAdress" [(ngModel)]="user.email"></ion-input>
-      </ion-item>
-
-     <!-- <ion-item lines="none">
-        <ion-select placeholder="Preffered Platform" [(ngModel)]="user.prefPlatform">
-          <ion-select-option value="stabusWits">Wits Stabus</ion-select-option>
-        </ion-select>
-      </ion-item>-->
-  
-      <ion-item lines="none">
-        <ion-label position="stacked">Password</ion-label>
-        <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
-      </ion-item>
-
-     
-      <!-- <div class="signupGroup"> -->
-        <ion-item lines="none"> 
-          <ion-text>
-            <h3>Creating an accout means you agree to our terms, conditions and Privacy Policy </h3>
-          </ion-text>
-        </ion-item>
-
-        <ion-item lines="none" >
-          <ion-button class ="accountBtn signUpBtn btnStyle accountInput" expand="block" (click)="mainAction()">CREATE ACCOUNT</ion-button>
-        </ion-item>
-      <!-- </div> -->
-
-
-      
-      <ion-item lines="none">
-        <p class="actions">Already have an account? <span (click)=loginAction() style="color:#0B9CC9;">&nbsp; Login</span></p>
-      </ion-item>
-    </form>
-  </div>
 </div>
 
 <!-- <div class="actions">
