@@ -267,7 +267,14 @@
 
 
 .mainWrapper{
-  width: 90vw;
+  width: 100vw;
   margin: auto;
   background-color: #D9DEDE;  
+  height: 100vh;
+  padding: 1.25rem;
 }
+
+.mainWrapper::-webkit-scrollbar {
+  display: none;
+}
+
