@@ -6,7 +6,8 @@ class PlatformSerializer(serializers.ModelSerializer):
         model = Platform
         fields = (
             'id', 
-            'name'
+            'name', 
+            'image'
         )
 
 class RouteSerializer(serializers.ModelSerializer):
