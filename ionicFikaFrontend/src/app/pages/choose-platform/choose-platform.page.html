@@ -1,9 +1,9 @@
 <ion-content>
 
- <div class="quick">
+ <!--<div class="quick">
 
 
-    <!-- No preffered-->
+     No preffered
 
     <ion-item lines="none" (click)="choosePlatAction('noPref')">
       
@@ -25,7 +25,7 @@
       
     </ion-item>
 
-     <!-- Preferred platform -->
+      Preferred platform 
 
      <ion-item lines="none" (click)="choosePlatAction('Pref')">
       <ion-grid>
@@ -54,6 +54,8 @@
 
     <ion-searchbar></ion-searchbar>
     
+
+
     <ion-grid>
       <ion-row *ngFor='let dataItem of Platforms'>
         <ion-col>
@@ -66,5 +68,25 @@
       </ion-row>
     </ion-grid>
   </div>-->
+<div class="mainWrapper">
 
+  <div class="welcomeText">
+    <p class="greetingText">Hi there!<br>
+    <span  class="choosePlatformInstr">Choose your platform.</span></p>
+    
+  </div>
+
+  <div class="platformCont">
+          
+        <div class="platformText">
+          <span class="platformName">Wits</span>
+          <span class="platformOperator">Stabus</span>
+          <span class="platformDsclmr">NB! Must be a student </span>
+        </div>     
+      
+        <div class="platformImg"><img src="../../assets/Wits.png" alt=""></div>
+      
+    
+  </div>
+</div>
 </ion-content>

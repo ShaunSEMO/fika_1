@@ -65,16 +65,22 @@ ion-content {
 .platformCont{
     border-radius: 6px;
     box-shadow: 0 6 5 rgba(0,0,0,0.2);
-    background-color: red;
+    background-color: #red;
     margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    height: 7rem;
    }
    
    .platformImg{
        height:100%;
        width: 50%;
+       position: relative;
    
        img{
-           float: right;
+          position:absolute;
+          right: 4px;
+          max-height: 90%;
           
        }
    }
@@ -90,11 +96,12 @@ ion-content {
    .platformText {
        span{ 
            padding-bottom: 8px;
+           color: #000;
        }
    
        .platformName{
-           font-size: 12px;
-           font-weight: 500;
+           font-size: 16px;
+           font-weight: 700;
        }
    
        .platformOperator{
@@ -105,4 +112,14 @@ ion-content {
        }
    
        
+   }
+
+   .greetingText{
+       font-size: 10px;
+   }
+
+   .choosePlatformInstr{
+       font-size:1.5em;
+       font-weight: 700;
+       font-style: normal;
    }
