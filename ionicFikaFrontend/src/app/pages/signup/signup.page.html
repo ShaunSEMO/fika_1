@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true" class="ion-padding">
+<ion-content [fullscreen]="true" >
 
   <!--<div  class="header">
     <div class="header-content">
@@ -7,6 +7,18 @@
  </div>-->
 
  <div class="mainWrapper">
+  <div class="platformCont" (click)="choosePlatAction('Wits')">
+          
+    <div class="platformText">
+      <span class="platformName">Wits</span>
+      <span class="platformOperator">Stabus</span>
+      <span class="platformDsclmr">NB! Must be a student </span>
+    </div>     
+  
+    <div class="platformImg"><img src="../../assets/Wits.png" alt=""></div>
+  
+
+</div>
 
   <div class = "input formContainer">
     <form> 
@@ -47,17 +59,17 @@
 
       
       <ion-item lines="none">
-        <p>Already have an account? <span>Login</span></p>
+        <p class="actions">Already have an account? <span (click)=loginAction() style="color:#0B9CC9;">&nbsp; Login</span></p>
       </ion-item>
     </form>
   </div>
 </div>
 
- <div class="actions">
+<!-- <div class="actions">
     <ion-text>
       <h1 (click)=loginAction()>LOGIN</h1>
     </ion-text>
-  </div>
+  </div>-->
 
 
 </ion-content>

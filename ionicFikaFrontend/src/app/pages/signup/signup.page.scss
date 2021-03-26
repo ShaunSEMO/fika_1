@@ -62,15 +62,17 @@ ion-text{
     position: absolute;
 
     ion-card{
-        border-radius: 20px;
+        border-radius: 6px;
     }
     ion-label{
-        font-size: 9px;
+        font-size: 0.875rem;
+        padding-bottom: 1rem;
+        color: black;
     }
 
     ion-input{
         border: 0.5px solid grey;
-        border-radius: 18px;
+        border-radius: 6px;
     }
 
     ion-button{
@@ -82,7 +84,7 @@ ion-text{
 
 .actions{
     //position: absolute;
-    margin-top: 157%;
+    //margin-top: 157%;
     font-size: 9px;
     display: flex;
     justify-content: center;
