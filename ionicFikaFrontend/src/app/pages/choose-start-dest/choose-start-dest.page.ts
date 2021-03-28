@@ -58,7 +58,7 @@ export class ChooseStartDestPage implements OnInit {
 
       this.map = L.map('map', {
         center: [ -26.190555,28.03 ],
-        zoom: 15,
+        zoom: 12,
         renderer: L.canvas()
       })
   
@@ -68,25 +68,12 @@ export class ChooseStartDestPage implements OnInit {
       }).addTo(this.map)
 
       L.marker([-26.191570, 28.028340]).addTo(this.map)
-      .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
+      .bindPopup('Amic Deck');
 
-      for(let i = 0;i<=this.Stops.length;i++) {
-        L.marker([-26.191570, 28.028340]).addTo(this.map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
-      }
-
-      for (let i = 0; i < this.Stops.length; i++) {
-        L.marker([-26.191570, 28.028340]).addTo(this.map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
-      }
-
-      // this.Stops.forEach(stop => {
-      //   L.marker([-26.191570, 28.028340]).addTo(this.map)
-      //   .bindPopup('A pretty CSS3 popup.<br> Easily customizable.');
-      // });
-
+      L.marker([-26.147820, 28.042600]).addTo(this.map)
+      .bindPopup('Rosebank');
       
-  
+
       setTimeout(() => {
         this.map.invalidateSize();
       }, 1000);

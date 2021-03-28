@@ -17,7 +17,7 @@ export class TripDetsPage implements OnInit {
   ngAfterViewInit(){ 
     $(document).ready(function(){ 
 
-      let socket = new WebSocket('ws://fika-1.herokuapp.com/ws/trackBus')
+      let socket = new WebSocket('wss://fika-1.herokuapp.com/ws/trackBus')
 
       // socket.onopen = (e) => {
       //   alert('connection established')
@@ -70,3 +70,4 @@ export class TripDetsPage implements OnInit {
   } 
 
 }
+// this does nothing

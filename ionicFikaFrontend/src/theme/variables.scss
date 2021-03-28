@@ -195,7 +195,7 @@
    */
 
   .md body {
-    --ion-background-color: #121212;
+    --ion-background-color: #D9DEDE;
     --ion-background-color-rgb: 18,18,18;
 
     --ion-text-color: #ffffff;
@@ -239,10 +239,12 @@
 
 .item {
   --background: #D9DEDE;
+  --border-width: 0;
+    --inner-border-width: 0;
 }
 
 .btnStyle {
-  box-shadow: 0 6 5 rgba(0,0,0,0.2);
+  box-shadow: 0px 6px 5px rgba(0,0,0,0.2);
   
 }
 
@@ -288,7 +290,7 @@
   box-shadow: 0px 6px 5px rgba(0,0,0,0.2);
 }
 .platformCont{  
-  background-color: #red;
+  background-color: #D9DEDE;
   margin-top: 2rem;
   display: flex;
   flex-direction: row;

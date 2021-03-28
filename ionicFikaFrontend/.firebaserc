@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "fikacorrect"
+    "default": "fika-17aee",
+    "deployment": "fika-17aee"
   }
 }

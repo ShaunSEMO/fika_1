@@ -7,8 +7,8 @@ import {Observable} from 'rxjs';
 })
 
 export class SharedService {
-    readonly APIUrl = 'http://fika-1.herokuapp.com/api/';
-    readonly PhotoUrl = 'http://fika-1.herokuapp.com/media/';
+    readonly APIUrl = 'https://fika-1.herokuapp.com/api/';
+    readonly PhotoUrl = 'https://fika-1.herokuapp.com/media/';
 
     constructor(private http:HttpClient) { }
 
@@ -77,3 +77,5 @@ export class SharedService {
     }
     
 }
+
+//this does nothng too
